@@ -22,8 +22,14 @@ console.log(pairsTimesTwo(array))
 const rGreaterThan30 = R.filter(greaterThan30)
 console.log(rGreaterThan30(array))
 
-//curry
+//Curried functions
 let add4 = (a,b,c,d) => {return a+b+c+d}
 let add4curries = R.curry(add4)
 let lastAdd = add4curries(1)(2)(3)
 console.log(lastAdd(4))
+
+console.log(add4curries(1,2)(3,4))
+
+let _ = R.__ //Ramda placeholder
+let addSecond = add4curries(1,_,3,4)
+console.log(addSecond(2))
