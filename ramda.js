@@ -21,3 +21,9 @@ console.log(pairsTimesTwo(array))
 // Ramda greater than 30
 const rGreaterThan30 = R.filter(greaterThan30)
 console.log(rGreaterThan30(array))
+
+//curry
+let add4 = (a,b,c,d) => {return a+b+c+d}
+let add4curries = R.curry(add4)
+let lastAdd = add4curries(1)(2)(3)
+console.log(lastAdd(4))
